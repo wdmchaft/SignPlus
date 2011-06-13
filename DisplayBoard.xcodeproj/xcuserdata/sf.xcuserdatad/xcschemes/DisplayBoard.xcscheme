@@ -36,7 +36,7 @@
       displayScale = "1.00"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Debug 4.1">
+      buildConfiguration = "Release">
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
