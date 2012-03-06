@@ -36,9 +36,9 @@
 	tvc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
 	tvc.messageLabel = fullscreenLabel.text;
 	[self presentModalViewController:tvc animated:YES];
-    [tvc release];
 	
 }
+
 
 
 -(IBAction)dimiss{
@@ -65,13 +65,6 @@
 		       
 }
 	
-
-
-
-
-
-
-
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
 	UITouch *touch = [touches anyObject];
@@ -100,7 +93,6 @@
 	UIGraphicsEndImageContext();
 	*/
     [super viewDidLoad];
-	[background setBackgroundColor:[UIColor whiteColor]];
 	fullscreenLabel.text = labeltext;
 	//fullscreenLabel.textColor = labelcolor;
 	
@@ -110,7 +102,6 @@
 -(void)colorWhite{
 	UIColor *backgroundcol = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"grid.png"]];
 	[background setBackgroundColor:backgroundcol];
-	[backgroundcol release];
 	
 }
 
@@ -129,53 +120,44 @@
 	
 	UIColor *backgroundcol = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"BlackBoard.png"]];
 	[background setBackgroundColor:backgroundcol];
-	[backgroundcol release];
 	
 }
 -(void)colorRed{
 	UIColor *backgroundcol = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"yellowpaper.png"]];
 	[background setBackgroundColor:backgroundcol];
-	[backgroundcol release];
 	
 }
 -(void)colorBlue{
 	UIColor *backgroundcol = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Woven.png"]];
 	[background setBackgroundColor:backgroundcol];
-	[backgroundcol release];
 	
 }
 -(void)colorGreen{
 	UIColor *backgroundcol = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"Metal.png"]];
 	[background setBackgroundColor:backgroundcol];
-	[backgroundcol release];
 	
 }
 -(void)colorRock{
 	UIColor *backgroundcol = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"rock.png"]];
 	[background setBackgroundColor:backgroundcol];
-	[backgroundcol release];
 	
 }
 -(void)colorDesigner{
 	UIColor *backgroundcol = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"designer.png"]];
 	[background setBackgroundColor:backgroundcol];
-	[backgroundcol release];
 	
 }
 -(void)colorWood{
 	UIColor *backgroundcol = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"wood.png"]];
 	[background setBackgroundColor:backgroundcol];
-	[backgroundcol release];
 }
 -(void)colorUnknown{
 	UIColor *backgroundcol = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"unknown.png"]];
 	[background setBackgroundColor:backgroundcol];
-	[backgroundcol release];
 }
 -(void)colorGrass{
 	UIColor *backgroundcol = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"grass.png"]];
 	[background setBackgroundColor:backgroundcol];
-	[backgroundcol release];
 }
 
 
@@ -250,16 +232,6 @@
 }
 
 
-- (void)dealloc {
-    [super dealloc];
-	[fullscreenLabel release];
-	[labeltext release];
-	[labelcolor release];
-    [background release];
-    [views release];
-	[nav release];
-    [left release];
-}
 
 
 @end

@@ -8,7 +8,6 @@
 
 #import "DisplayBoardViewController.h"
 #import <QuartzCore/QuartzCore.h>
-#import "TemplateViewer.h"
 #import "AboutMeView.h"
 #import "HelpGuideView.h"
 
@@ -22,69 +21,6 @@
 
 
 
--(void)BeginTempScreenView:(int)index{
-	
-	// Set up the create a temporary fullscreenview.
-	TemplateViewer *full = [[TemplateViewer alloc] initWithNibName:@"TemplateViewer" bundle:nil];
-	full.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-	
-	
-	
-	
-	switch (index) {
-		case 0:
-			full.labeltext = @"Hello";
-			break;
-		case 1:
-			full.labeltext = @"Happy Birthday";
-			break;
-		case 2:
-			full.labeltext = @"Yes";
-			break;
-		case 3:
-			full.labeltext = @"No";
-			break;
-		case 4:
-			full.labeltext = @"Go Team";
-			break;
-		case 5:
-			full.labeltext = @"Welcome Home";
-			break;
-		case 6:
-			full.labeltext = @"Reserved";
-			break;
-		case 7:
-			full.labeltext = @"Open";
-			break;
-		case 8:
-			full.labeltext = @"Closed";
-			break;
-		case 9:
-			full.labeltext = @"iPad For Sale";
-			break;
-        case 10:
-			full.labeltext = @"Will Code for Food";
-			break;
-        case 11:
-			full.labeltext = @"Lion + iOS5 + iCloud";
-			break;
-		default:
-			full.labeltext = @"";
-			break;
-	}
-	
-	//full.labeltext = textbox.text;
-	//full.labelcolor = displaytext.textColor;
-	//[self setFullScreenView:full]; // Set it to our property (nonatomic, retain).
-	// Clean up.
-	
-
-[self presentModalViewController:full animated:YES]; // Present the view.
-	
-	[full release];
-	
-	
-}	
 	
 
 -(IBAction)submit{
@@ -104,7 +40,7 @@
 	full.labeltext = textbox.text;
 	//full.labelcolor = displaytext.textColor;
 	[self setFullScreenView:full]; // Set it to our property (nonatomic, retain).
-	[full release]; // Clean up.
+	 // Clean up.
 	
 	[self presentModalViewController:fullScreenView animated:YES]; // Present the view.
 	
@@ -144,18 +80,18 @@ textbox.text= @"";
 	
 	
 	// We have some predefined images added to the project.
-	self.scrollPages = [NSArray arrayWithObjects:@"Hello.png",
-						@"happybirthday.png",
-						@"yes.png",
-						@"No.png",
-						@"goteam.png",
-						@"welcome_home.png",
-						@"reserved.png",
-						@"open.png",
-						@"closed.png",
-						@"ipadforsale.png",
-                        @"willcodeforfood.png",
-                        @"lion_ios_wwdc2011.png",
+	self.scrollPages = [NSArray arrayWithObjects:@"Hello",
+						@"Happy Birthday",
+						@"Yes",
+						@"No",
+						@"Go Team",
+						@"Welcome Home",
+						@"Reserved",
+						@"Open",
+						@"Closed",
+						@"iPad For Sale",
+                        @"Will Code For Food",
+                        @"WWDC or Bust",
 						nil];
 	
 	// You can add the control programatically like so:
@@ -171,28 +107,52 @@ textbox.text= @"";
 	//w[self.view addSubview:scrollViewPreview];
 }
 
+-(void)BSPreviewTapped:(id)sender
+{
+	
+	FullScreenView *full = [[FullScreenView alloc] initWithNibName:@"FullScreenView" bundle:nil];
+	full.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+	
+	full.labeltext = [self.scrollPages objectAtIndex:[(TappedView *)[sender view] positioninArray]];
+
+		//full.labelcolor = displaytext.textColor;
+	[self setFullScreenView:full]; // Set it to our property (nonatomic, retain).
+	 // Clean up.
+	
+	[self presentModalViewController:fullScreenView animated:YES]; // Present the view.
+	
+	
+}
+
 
 #pragma mark -
 #pragma mark BSPreviewScrollViewDelegate methods
 -(UIView*)viewForItemAtIndex:(BSPreviewScrollView*)scrollView index:(int)index
 {
-	// Note that the images are actually smaller than the image view frame, each image
-	// is 210x280. Images are centered and because they are smaller than the actual 
-	// view it creates a padding between each image. 
-	CGRect imageViewFrame = CGRectMake(0.0f, 0.0f, 1026, 320);
 
+	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(BSPreviewTapped:)];
+	[tap setNumberOfTapsRequired:2];
 	
-	// TapImage is a subclassed UIImageView that catch touch/tap events 
-	TapImage *imageView = [[[TapImage alloc] initWithFrame:imageViewFrame] autorelease];
-	imageView.userInteractionEnabled = YES;
-	imageView.image = [UIImage imageNamed:[self.scrollPages objectAtIndex:index]];
-	imageView.contentMode = UIViewContentModeCenter;
-	imageView.positioninArray = index;
-	//NSLog(@"Int: %i",index);
+	TappedView *view = [[TappedView alloc]initWithFrame:CGRectMake(0, 0, 1026, 320)];
+	UIView *content = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 400, 242)];
+	[content setBackgroundColor:[UIColor whiteColor]];
+	[view setPositioninArray:index];
+	[view addGestureRecognizer:tap];
+	
+	UILabel *textLabel = [[UILabel alloc]initWithFrame:content.frame];
+	[textLabel setFont:[UIFont boldSystemFontOfSize:40]];
+	[textLabel setTextAlignment:UITextAlignmentCenter];
+	[textLabel setText:[self.scrollPages objectAtIndex:index]];
+	[textLabel setBackgroundColor:[UIColor clearColor]];
+	
+	content.center = view.center;
+	[content addSubview:textLabel];
+ 	[view addSubview:content];
 	
 	
 	
-	return imageView;
+	
+	return view;
 }
 
 -(int)itemCount:(BSPreviewScrollView*)scrollView
@@ -206,10 +166,8 @@ textbox.text= @"";
 
 -(IBAction)launchAboutView{
     AboutMeView *amv = [[AboutMeView alloc] initWithNibName:@"AboutMeView" bundle:nil];
-	
-	
+	amv.modalTransitionStyle = UIModalTransitionStylePartialCurl;	
 	[self presentModalViewController:amv animated:YES]; // Present the view.
-    [amv release];
     
 }
 
@@ -220,7 +178,6 @@ textbox.text= @"";
 	
 	
 	[self presentModalViewController:hgv animated:YES]; // Present the view.
-    [hgv release];
     
     
 }
@@ -271,14 +228,5 @@ textbox.text= @"";
 }
 
 
-- (void)dealloc {
-    [super dealloc];
-	[textbox release];
-	[navbar release];
-	[scrollViewPreview release];
-	[scrollPages release];
-	
-
-}
 
 @end

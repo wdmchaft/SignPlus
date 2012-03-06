@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-
-
-@interface TextController : UIViewController <UIApplicationDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>{
+@interface TextController : UIViewController <UIApplicationDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource>
+{
+	NSArray *presetColors;
     NSString *messageLabel;
 	IBOutlet UILabel * textcontroller_label;
 	UIImagePickerController* imagePickerController;
@@ -20,20 +20,16 @@
 
 	
 }
-@property (nonatomic,retain) IBOutlet UISegmentedControl *font_segmentedcontrol;
-@property (nonatomic,retain) IBOutlet UISegmentedControl *textcolor_segmentedcontrol;
-@property (nonatomic,retain) IBOutlet UILabel * textcontroller_label;
-@property (nonatomic,retain) NSString *messageLabel;
+@property (nonatomic) IBOutlet UISegmentedControl *font_segmentedcontrol;
+@property (nonatomic) IBOutlet UISegmentedControl *textcolor_segmentedcontrol;
+@property (nonatomic) IBOutlet UILabel * textcontroller_label;
+@property (nonatomic) NSString *messageLabel;
 
 
 -(IBAction)textcolor_changed;
 -(IBAction)fontsize_changed;
 -(IBAction)done;
 -(IBAction)ChangeText;
--(IBAction)ColorvalChanged: (id) sender;
 
-//- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo;
-//- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker;
-//-(IBAction)pickImageFromLibrary;
 
 @end

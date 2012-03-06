@@ -17,15 +17,50 @@
 }
 
 
+-(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error{
+	
+	[self dismissModalViewControllerAnimated:YES];
+}
+
 
 -(IBAction)sendMail{
-	NSString *url = [NSString stringWithString: @"mailto:contactrobot@sonstermedia.com"];
-	[[UIApplication sharedApplication] openURL: [NSURL URLWithString: url]];
+	if ([MFMailComposeViewController canSendMail])
+	{
+		MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
+		mailViewController.mailComposeDelegate = self;
+		mailViewController.navigationBar.tintColor = [UIColor colorWithRed:87/255 green:35/255 blue:85/255 alpha:1.0];
+		
+		[mailViewController setToRecipients:[NSArray arrayWithObject:@"support@sonstermedia.com"]];
+		[mailViewController setSubject:@"Contact Form"];
+	
+		
+			// Present the VIew Controller and clean up after ourselves
+		[self presentModalViewController:mailViewController animated:YES];
+	}
+	else if (![MFMailComposeViewController canSendMail]){
+		UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Email Not Yet Configured" message:@"Email needs to setup on the device before you can use this feature. Open the Mail to setup your email" delegate:self cancelButtonTitle:@"I Understand" otherButtonTitles:nil];
+		[alertView show];
+	}
 }
 
 -(IBAction)openSupport{
-	NSString *url = [NSString stringWithString: @"http://support.sonstermedia.com"];
-	[[UIApplication sharedApplication] openURL: [NSURL URLWithString: url]];
+	if ([MFMailComposeViewController canSendMail])
+	{
+		MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
+		mailViewController.mailComposeDelegate = self;
+		mailViewController.navigationBar.tintColor = [UIColor colorWithRed:87/255 green:35/255 blue:85/255 alpha:1.0];
+		
+		[mailViewController setToRecipients:[NSArray arrayWithObject:@"support@sonstermedia.com"]];
+		[mailViewController setSubject:@"Sign+ Support Ticket"];
+		[mailViewController setMessageBody:[NSString stringWithFormat:@"<html><body><b>Issue:</b><br/><i>Describe the issue in detail</i><br/><br/><b>Technical Details</b><span><br/>iOS Version: %@<br/>Device Model: %@<br/>Application Version: %@<br/></span></html>",[[UIDevice currentDevice] systemVersion],[[UIDevice currentDevice] model],[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]] isHTML:YES];
+		
+			// Present the VIew Controller and clean up after ourselves
+		[self presentModalViewController:mailViewController animated:YES];
+	}
+	else if (![MFMailComposeViewController canSendMail]){
+		UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Email Not Yet Configured" message:@"Email needs to setup on the device before you can use this feature. Open the Mail to setup your email" delegate:self cancelButtonTitle:@"I Understand" otherButtonTitles:nil];
+		[alertView show];
+	}
 }
 -(IBAction)openWeb{
 	NSString *url = [NSString stringWithString: @"http://sonstermedia.com/downloads"];
@@ -47,12 +82,14 @@
 }
 */
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	icon.image = [UIImage imageNamed:@"self.png"];
+
 }
-*/
 
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -87,9 +124,6 @@
 }
 
 
-- (void)dealloc {
-    [super dealloc];
-}
 
 
 @end

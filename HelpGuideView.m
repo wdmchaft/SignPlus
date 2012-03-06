@@ -126,9 +126,6 @@ else {
 }
 
 
-- (void)dealloc {
-    [super dealloc];
-}
 
 
 @end

@@ -16,7 +16,7 @@
 
 }
 
-@property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) IBOutlet DisplayBoardViewController *viewController; // This is all we need here. We can just use this.
+@property (nonatomic) IBOutlet UIWindow *window;
+@property (nonatomic) IBOutlet DisplayBoardViewController *viewController; // This is all we need here. We can just use this.
 @end
 

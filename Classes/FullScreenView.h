@@ -20,12 +20,12 @@
     IBOutlet UIBarButtonItem *left;
 	
 }
-@property (nonatomic, retain) IBOutlet UILabel *fullscreenLabel;
-@property (nonatomic, retain) NSString *labeltext;
-@property (nonatomic, retain) UIColor *labelcolor;
-@property (nonatomic, retain) IBOutlet UINavigationBar *nav;
-@property (nonatomic, retain) IBOutlet UIView *background;
-@property (nonatomic, retain) IBOutlet UIView *views;
+@property (nonatomic) IBOutlet UILabel *fullscreenLabel;
+@property (nonatomic) NSString *labeltext;
+@property (nonatomic) UIColor *labelcolor;
+@property (nonatomic) IBOutlet UINavigationBar *nav;
+@property (nonatomic) IBOutlet UIView *background;
+@property (nonatomic) IBOutlet UIView *views;
 
 
 

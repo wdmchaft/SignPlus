@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
+#import "AGMedallionView.h"
 
-
-@interface AboutMeView : UIViewController {
-    
+@interface AboutMeView : UIViewController <MFMailComposeViewControllerDelegate> {
+   IBOutlet AGMedallionView *icon;
 }
 -(IBAction)done;
 -(IBAction)sendMail;
