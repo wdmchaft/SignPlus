@@ -16,13 +16,6 @@
 @synthesize scrollPages, scrollViewPreview;
 
 
-
-
-
-
-
-	
-
 -(IBAction)submit{
 	
 

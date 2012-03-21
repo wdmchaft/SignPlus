@@ -7,7 +7,7 @@
 //
 
 #import "AboutMeView.h"
-
+#import "Web.h"
 
 @implementation AboutMeView
 
@@ -48,7 +48,7 @@
 	{
 		MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
 		mailViewController.mailComposeDelegate = self;
-		mailViewController.navigationBar.tintColor = [UIColor colorWithRed:87/255 green:35/255 blue:85/255 alpha:1.0];
+		mailViewController.navigationBar.tintColor = [UIColor colorWithRed:153.0/255.0 green:153.0/255.0 blue:153.0/255.0 alpha:1.0];
 		
 		[mailViewController setToRecipients:[NSArray arrayWithObject:@"support@sonstermedia.com"]];
 		[mailViewController setSubject:@"Sign+ Support Ticket"];
@@ -63,12 +63,16 @@
 	}
 }
 -(IBAction)openWeb{
-	NSString *url = [NSString stringWithString: @"http://sonstermedia.com/downloads"];
-	[[UIApplication sharedApplication] openURL: [NSURL URLWithString: url]];
+	Web *sonstermedia = [[Web alloc]initWithNibName:@"Web" bundle:nil];
+	[sonstermedia setModalPresentationStyle:UIModalPresentationFormSheet];
+	[sonstermedia setUrl:[NSURL URLWithString:@"http://sonstermedia.com"]];
+	[self presentModalViewController:sonstermedia animated:YES];
 }
 -(IBAction)openTwitter{
-	NSString *url = [NSString stringWithString: @"http://mobile.twitter.com/sonstermedia"];
-	[[UIApplication sharedApplication] openURL: [NSURL URLWithString: url]];
+	Web *sonstermedia = [[Web alloc]initWithNibName:@"Web" bundle:nil];
+	[sonstermedia setModalPresentationStyle:UIModalPresentationFormSheet];
+	[sonstermedia setUrl:[NSURL URLWithString:@"http://twitter.com/sonnyfazio"]];
+	[self presentModalViewController:sonstermedia animated:YES];
 }
 
 

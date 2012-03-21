@@ -24,6 +24,12 @@
 		E047B40415033990004041EF /* AGMedallionView.m in Sources */ = {isa = PBXBuildFile; fileRef = E047B40315033990004041EF /* AGMedallionView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E047B40715033C67004041EF /* self.png in Resources */ = {isa = PBXBuildFile; fileRef = E047B40515033C67004041EF /* self.png */; };
 		E047B40815033C67004041EF /* self@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E047B40615033C67004041EF /* self@2x.png */; };
+		E04E56401505CD6A00B81992 /* site.png in Resources */ = {isa = PBXBuildFile; fileRef = E04E563C1505CD6A00B81992 /* site.png */; };
+		E04E56411505CD6A00B81992 /* site@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E04E563D1505CD6A00B81992 /* site@2x.png */; };
+		E04E56421505CD6A00B81992 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = E04E563E1505CD6A00B81992 /* twitter.png */; };
+		E04E56431505CD6A00B81992 /* twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E04E563F1505CD6A00B81992 /* twitter@2x.png */; };
+		E04E56471505CFB200B81992 /* Web.m in Sources */ = {isa = PBXBuildFile; fileRef = E04E56451505CFB100B81992 /* Web.m */; };
+		E04E56481505CFB200B81992 /* Web.xib in Resources */ = {isa = PBXBuildFile; fileRef = E04E56461505CFB100B81992 /* Web.xib */; };
 		E06D41B31503195C007B195F /* about.png in Resources */ = {isa = PBXBuildFile; fileRef = E06D41A91503195B007B195F /* about.png */; };
 		E06D41B41503195C007B195F /* about@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E06D41AA1503195B007B195F /* about@2x.png */; };
 		E06D41B51503195C007B195F /* clear.png in Resources */ = {isa = PBXBuildFile; fileRef = E06D41AB1503195B007B195F /* clear.png */; };
@@ -83,6 +89,13 @@
 		E047B40315033990004041EF /* AGMedallionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGMedallionView.m; sourceTree = "<group>"; };
 		E047B40515033C67004041EF /* self.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = self.png; sourceTree = "<group>"; };
 		E047B40615033C67004041EF /* self@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "self@2x.png"; sourceTree = "<group>"; };
+		E04E563C1505CD6A00B81992 /* site.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = site.png; path = "Buttons Images/site.png"; sourceTree = "<group>"; };
+		E04E563D1505CD6A00B81992 /* site@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "site@2x.png"; path = "Buttons Images/site@2x.png"; sourceTree = "<group>"; };
+		E04E563E1505CD6A00B81992 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = twitter.png; path = "Buttons Images/twitter.png"; sourceTree = "<group>"; };
+		E04E563F1505CD6A00B81992 /* twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "twitter@2x.png"; path = "Buttons Images/twitter@2x.png"; sourceTree = "<group>"; };
+		E04E56441505CFB100B81992 /* Web.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Web.h; sourceTree = "<group>"; };
+		E04E56451505CFB100B81992 /* Web.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Web.m; sourceTree = "<group>"; };
+		E04E56461505CFB100B81992 /* Web.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Web.xib; sourceTree = "<group>"; };
 		E06D41A91503195B007B195F /* about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = about.png; path = "Buttons Images/about.png"; sourceTree = "<group>"; };
 		E06D41AA1503195B007B195F /* about@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "about@2x.png"; path = "Buttons Images/about@2x.png"; sourceTree = "<group>"; };
 		E06D41AB1503195B007B195F /* clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = clear.png; path = "Buttons Images/clear.png"; sourceTree = "<group>"; };
@@ -156,6 +169,9 @@
 				E07C6A57124A774D00E906FF /* FullScreenView.m */,
 				E0DB7781125645190022FAD9 /* TextController.h */,
 				E0DB7782125645190022FAD9 /* TextController.m */,
+				E04E56441505CFB100B81992 /* Web.h */,
+				E04E56451505CFB100B81992 /* Web.m */,
+				E04E56461505CFB100B81992 /* Web.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -210,6 +226,10 @@
 				E06D41B21503195C007B195F /* support@2x.png */,
 				E047B40515033C67004041EF /* self.png */,
 				E047B40615033C67004041EF /* self@2x.png */,
+				E04E563C1505CD6A00B81992 /* site.png */,
+				E04E563D1505CD6A00B81992 /* site@2x.png */,
+				E04E563E1505CD6A00B81992 /* twitter.png */,
+				E04E563F1505CD6A00B81992 /* twitter@2x.png */,
 				E03D54BE12AD22B600A3F56A /* Icons */,
 				E0B9234115033FE90059F09B /* arrow_left.png */,
 				E0B9234215033FE90059F09B /* arrow_left@2x.png */,
@@ -356,6 +376,11 @@
 				E0B9234815033FE90059F09B /* arrow_right@2x.png in Resources */,
 				E0C915DC150341A200E3CF68 /* iTunesArtwork in Resources */,
 				E0C915DE150341AB00E3CF68 /* Icon-72@2x.png in Resources */,
+				E04E56401505CD6A00B81992 /* site.png in Resources */,
+				E04E56411505CD6A00B81992 /* site@2x.png in Resources */,
+				E04E56421505CD6A00B81992 /* twitter.png in Resources */,
+				E04E56431505CD6A00B81992 /* twitter@2x.png in Resources */,
+				E04E56481505CFB200B81992 /* Web.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +401,7 @@
 				E08A7EE9129AB0D00090667C /* AboutMeView.m in Sources */,
 				E08A7EEB129AB0D70090667C /* HelpGuideView.m in Sources */,
 				E047B40415033990004041EF /* AGMedallionView.m in Sources */,
+				E04E56471505CFB200B81992 /* Web.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +413,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sonny Fazio (4Y9GNY9HFP)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -394,8 +421,9 @@
 				GCC_PREFIX_HEADER = DisplayBoard_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "DisplayBoard-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = DisplayBoard;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "07E62840-043F-46D1-B938-1C1A48440B11";
 			};
 			name = "Debug 4.1";
 		};
@@ -404,13 +432,15 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Sonny Fazio";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = DisplayBoard_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "DisplayBoard-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = DisplayBoard;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "FB3C9127-57F0-4557-8386-74D3BB6FD306";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -468,6 +498,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sonny Fazio (4Y9GNY9HFP)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -475,8 +506,9 @@
 				GCC_PREFIX_HEADER = DisplayBoard_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "DisplayBoard-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = DisplayBoard;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "07E62840-043F-46D1-B938-1C1A48440B11";
 			};
 			name = "Debug 4.2";
 		};
